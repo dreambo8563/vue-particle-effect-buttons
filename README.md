@@ -1,5 +1,7 @@
 # vue-particle-effect-button
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dreambo8563/vue-particle-effect-button.svg)](https://greenkeeper.io/)
+
 ## Project setup
 ```
 npm install
