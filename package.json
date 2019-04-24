@@ -1,14 +1,22 @@
 {
   "name": "vue-particle-effect-button",
   "version": "0.1.0",
-  "private": true,
+  "author": "dreambo8563",
+  "main": "dist/vue-particle-effect-button.umd.min.js",
+  "private": false,
+  "description": "Particle Effects Buttons for vue",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-particle-effect-button src/index.js",
+    "test": "npm run build",
+    "pages": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "report": "vue-cli-service build --report",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
+    "animejs": "^3.0.1",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -22,10 +30,37 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreambo8563/vue-particle-effect-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dreambo8563/vue-particle-effect-button/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/*",
+    "src/*",
+    "package.json",
+    "*.js",
+    "README.md"
+  ],
+  "keywords": [
+    "vue",
+    "button",
+    "particle",
+    "portal"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
