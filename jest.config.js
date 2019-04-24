@@ -1,4 +1,11 @@
 module.exports = {
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/index.{vue}",
+    "src/**/*.{ts}",
+    "!**/node_modules/**",
+    "!**/vendor/**"
+  ],
   moduleFileExtensions: ["js", "jsx", "json", "vue"],
   transform: {
     "^.+\\.vue$": "vue-jest",
@@ -18,5 +25,10 @@ module.exports = {
   watchPlugins: [
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname"
-  ]
+  ],
+  globals: {
+    "ts-jest": {
+      diagnostics: false
+    }
+  }
 };

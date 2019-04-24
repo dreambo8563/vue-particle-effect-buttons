@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "lts/*"
+install:
+  - npm i
+  - npm install -g codecov
+before_install:
+  - npm i -g npm@latest
