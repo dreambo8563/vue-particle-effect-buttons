@@ -1,13 +1,13 @@
 {
-  "name": "vue-particle-effect-button",
-  "version": "0.1.0",
+  "name": "vue-particle-effect-buttons",
+  "version": "0.1.2",
   "author": "dreambo8563",
-  "main": "dist/vue-particle-effect-button.umd.min.js",
+  "main": "dist/vue-particle-effect-buttons.umd.min.js",
   "private": false,
   "description": "Particle Effects Buttons for vue",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-particle-effect-button src/index.js",
+    "build": "vue-cli-service build --target lib --name vue-particle-effect-buttons src/index.js",
     "test": "npm run build",
     "pages": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
@@ -39,10 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dreambo8563/vue-particle-effect-button.git"
+    "url": "https://github.com/dreambo8563/vue-particle-effect-buttons.git"
   },
   "bugs": {
-    "url": "https://github.com/dreambo8563/vue-particle-effect-button/issues"
+    "url": "https://github.com/dreambo8563/vue-particle-effect-buttons/issues"
   },
   "license": "MIT",
   "files": [
