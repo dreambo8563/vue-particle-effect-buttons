@@ -1,6 +1,6 @@
 {
   "name": "vue-particle-effect-button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "dreambo8563",
   "main": "dist/vue-particle-effect-button.umd.min.js",
   "private": false,
