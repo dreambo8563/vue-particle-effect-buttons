@@ -15,6 +15,7 @@ npm install --save vue-particle-effect-buttons
 Check out the [Demo](https://dreambo8563.github.io/vue-particle-effect-buttons/) to see it in action.
 
 ```js
+<template>
     <ParticleBtn
       :visible.sync="btnOps.visible"
       :animating.sync="btnOps.animating"
