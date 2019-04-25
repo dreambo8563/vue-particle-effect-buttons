@@ -10,15 +10,23 @@ This library is a Vue portal of an awesome [Codrops Article](https://tympanus.ne
 npm install --save vue-particle-effect-buttons
 ```
 
-## TODO
-
-- [] supoort onBegin hook
-
 ## Usage
 
 Check out the [Demo](https://dreambo8563.github.io/vue-particle-effect-buttons/) to see it in action.
 
 ```js
+    <ParticleBtn
+      :visible.sync="btnOps.visible"
+      :animating.sync="btnOps.animating"
+      :options="btnOps"
+      cls="btn-cls"
+    >hello eveybody!</ParticleBtn>
+    <h2>animating:{{btnOps.animating}}</h2>
+    <h2>visible:{{btnOps.visible}}</h2>
+    <button @click="btnOps.visible=!btnOps.visible">toggle</button>
+  </div>
+</template>
+
 <script>
 import ParticleEffectButton from "vue-particle-effect-buttons"
 
@@ -34,8 +42,11 @@ export default {
         color: function () {
           return Math.random() < 0.5 ? "#000000" : "#ffffff";
         },
-        complete: () => {
+        onComplete: () => {
           console.log("complete");
+        },
+        onBegin: () => {
+          console.log("begin");
         },
         visible: true,
         animating: false
