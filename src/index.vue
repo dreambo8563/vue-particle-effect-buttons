@@ -388,7 +388,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$attrs);
     if (this.$slots.default) {
       this.init();
       this.$set(

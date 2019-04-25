@@ -170,9 +170,6 @@ export default {
       this.$set(this.config, i, {
         ...v,
         complete: () => {
-          // this.toggle(i);
-          console.log("complete");
-          console.log(this.config[i]);
           this.config[i].animating = false;
         },
         visible: i % 2 == 0,
