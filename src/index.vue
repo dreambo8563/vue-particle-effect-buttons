@@ -5,7 +5,7 @@
         <div
           :style="slotStyl"
           ref="btn"
-          @click="btnClick"
+          @click="disintegrate"
           v-if="$slots.default"
           class="particles-button"
         >
@@ -69,6 +69,10 @@ export default {
     config: {
       type: Object,
       default: () => defaultConf
+    },
+    visible: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -77,7 +81,7 @@ export default {
       mergedOps: { ...defaultConf, ...this.config },
       particles: [],
       frame: null,
-      buttonVisible: true, // just a flag
+      buttonVisible: this.visible, // just a flag
       disintegrating: false,
       lastProgress: 0,
       rect: {
@@ -97,13 +101,15 @@ export default {
   },
   methods: {
     btnClick() {
+      // console.log("clicked", this.isAnimating, this.buttonVisible);
       if (!this.isAnimating && this.buttonVisible) {
         this.disintegrate();
         this.buttonVisible = !this.buttonVisible;
       }
     },
     disintegrate(options) {
-      if (!this.isAnimating) {
+      if (!this.isAnimating && this.buttonVisible) {
+        // console.log(`${this.config.label}: disintegrate`, this.buttonVisible);
         this.disintegrating = true;
         this.lastProgress = 0;
 
@@ -115,9 +121,11 @@ export default {
             this.addParticles(this.rect, value / 100, true);
           }
         });
+        this.buttonVisible = !this.buttonVisible;
       }
     },
     setup(options) {
+      // console.log(`${this.config.label}: setup`, this.buttonVisible);
       this.mergedOps = { ...this.mergedOps, ...options };
       this.wrapperVisible = "visible";
       if (this.mergedOps.duration) {
@@ -181,6 +189,8 @@ export default {
       let i = Math.floor(
         this.mergedOps.particlesAmountCoefficient * (progressDiff * 100 + 1)
       );
+      // fix redundant complete event
+      i = Math.max(1, i);
       if (i > 0) {
         while (i--) {
           this.addParticle({
@@ -231,6 +241,7 @@ export default {
     },
     integrate(options) {
       if (!this.isAnimating) {
+        // console.log(`${this.config.label}: integrate`, this.buttonVisible);
         this.disintegrating = false;
         this.lastProgress = 1;
         this.setup(options);
@@ -238,16 +249,19 @@ export default {
           const value = anim.animatables[0].target.value;
           setTimeout(() => {
             this.addTransforms(value);
-            this.buttonVisible = !this.buttonVisible;
-            this.wrapperTransform = "";
-            this.btnTransform = "";
+            // console.log(`${this.config.label}: inTimeout`, this.buttonVisible);
+
+            // this.wrapperTransform = "";
+            // this.btnTransform = "";
             // this.canvasStyl.display = "none"
           }, this.mergedOps.duration);
 
           if (this.mergedOps.duration) {
+            // console.log("before addParticles", value);
             this.addParticles(this.rect, value / 100, true);
           }
         });
+        this.buttonVisible = !this.buttonVisible;
       }
     },
 
@@ -270,9 +284,9 @@ export default {
 
         this.canvasStyl.display = "none";
         if (is.fnc(this.mergedOps.complete)) {
-          console.log(this.mergedOps.complete);
+          // console.log(`${this.config.label}: visible`, this.buttonVisible);
           this.mergedOps.complete();
-          //   console.log("complete");
+          // console.log("complete");
         }
       }
     },
@@ -348,8 +362,28 @@ export default {
         getCSSValue(this.$refs["btn"], "background-color")
       );
       this.ctx = this.$refs["canvas"].getContext("2d");
+      // this.$watch('visible', function (n, o) {
+      //   if (!!n != !!o) {
+      //     console.log(n, o);
+      //     this.buttonVisible = n
+      //     if (n) {
+      //       this.integrate()
+      //     } else {
+      //       this.btnClick()
+      //     }
+      //   }
+      // },
+      //   {
+      //     immediate: true
+      //   }
+      // )
     }
   }
+  // watch: {
+  //   visible: {
+  //     handler:
+  //   }
+  // }
 };
 </script>
 <style lang="scss">
