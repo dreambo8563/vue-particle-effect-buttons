@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v0.1.3...v1.0.0) (2019-04-25)
+
+
+### Features
+
+* **implement:** almost done ([cd505a4](https://github.com/dreambo8563/vue-particle-effect-buttons/commit/cd505a4))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v0.1.2...v0.1.3) (2019-04-25)
 
