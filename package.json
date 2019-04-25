@@ -16,8 +16,8 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
+    "core-js": "^3.0.1",
     "animejs": "^3.0.1",
-    "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -29,7 +29,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.7.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

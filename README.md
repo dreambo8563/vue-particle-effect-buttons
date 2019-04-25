@@ -2,6 +2,10 @@
 
 > Bursting particle effect buttons for Vue.
 
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/dreambo8563/vue-particle-effect-button.svg)](https://greenkeeper.io/)
+
+
 This library is a Vue portal of an awesome [Codrops Article](https://tympanus.net/codrops/2018/04/25/particle-effects-for-buttons/) by [Luis Manuel](https://tympanus.net/codrops/author/luis/) (original [source](https://github.com/codrops/ParticleEffectsButtons/)).
 
 ## Install
