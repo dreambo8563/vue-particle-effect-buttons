@@ -3,13 +3,19 @@
     <div class="grid">
       <div v-for="(v, i) of config" :key="i" :class="getCls(i)">
         <button
-          v-if="!v.visible"
-          @click="recover(i)"
+          v-if="!v.visible && !v.animating"
+          @click="toggle(i)"
           style="position: absolute; top: 1em; right: 1em; background: rgb(50, 186, 250); color: rgb(255, 255, 255); border: 0px; border-radius: 4px; font-size: 1em; padding: 0.7em 1.2em; cursor: pointer; outline: none;"
         >
           Reset
         </button>
-        <Test :visible="config[i].visible" :ref="getRef(i)" :config="v">
+        <Test
+          cls="abc"
+          :animating.sync="config[i].animating"
+          :visible.sync="config[i].visible"
+          :ref="getRef(i)"
+          :options="v"
+        >
           <span>{{ v.label }}</span>
         </Test>
       </div>
@@ -141,11 +147,6 @@ export default {
     Test: ParticleBtn
   },
   methods: {
-    recover(index) {
-      const refName = `p${index}`;
-      // console.log("refName recover", refName)
-      this.$refs[refName][0].integrate();
-    },
     toggle(index) {
       this.$set(this.config, index, {
         ...this.config[index],
@@ -169,10 +170,13 @@ export default {
       this.$set(this.config, i, {
         ...v,
         complete: () => {
-          this.toggle(i);
-          // console.log("complete");
+          // this.toggle(i);
+          console.log("complete");
+          console.log(this.config[i]);
+          this.config[i].animating = false;
         },
-        visible: true
+        visible: i % 2 == 0,
+        animating: false
       });
     });
   }
@@ -187,5 +191,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  .abc {
+    background: blue;
+  }
 }
 </style>

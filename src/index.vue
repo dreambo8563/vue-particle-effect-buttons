@@ -8,9 +8,10 @@
           @click="disintegrate"
           v-if="$slots.default"
           class="particles-button"
+          :class="cls"
         >
           <slot>
-            <button>Send</button>
+            <button>content</button>
           </slot>
         </div>
       </div>
@@ -24,6 +25,8 @@
 </template>
 <script>
 import anime from "animejs/lib/anime.es.js";
+
+// useful funcs
 const is = {
   arr: function(a) {
     return Array.isArray(a);
@@ -48,6 +51,8 @@ function getCSSValue(el, prop) {
 function rand(value) {
   return Math.random() * value - value / 2;
 }
+
+// default options
 const defaultConf = {
   type: "circle",
   style: "fill",
@@ -64,52 +69,62 @@ const defaultConf = {
   particlesAmountCoefficient: 3,
   oscillationCoefficient: 20
 };
+
 export default {
   props: {
-    config: {
+    options: {
       type: Object,
       default: () => defaultConf
     },
     visible: {
       type: Boolean,
       default: true
+    },
+    animating: {
+      type: Boolean,
+      default: true
+    },
+    cls: {
+      type: [String, Array, Object],
+      default: ""
     }
   },
 
   data() {
     return {
-      mergedOps: { ...defaultConf, ...this.config },
+      mergedOps: { ...defaultConf, ...this.options },
       particles: [],
       frame: null,
-      buttonVisible: this.visible, // just a flag
-      disintegrating: false,
-      lastProgress: 0,
-      rect: {
-        width: 0,
-        height: 0
-      },
-      height: 0,
-      width: 0,
+      buttonVisible: !this.visible, // just a flag
       wrapperVisible: "visible",
       wrapperTransform: "",
       btnTransform: "",
       canvasStyl: {
         display: "none"
-      },
-      ctx: {}
+      }
     };
   },
   methods: {
-    btnClick() {
-      // console.log("clicked", this.isAnimating, this.buttonVisible);
-      if (!this.isAnimating && this.buttonVisible) {
-        this.disintegrate();
-        this.buttonVisible = !this.buttonVisible;
-      }
+    init() {
+      // init some vars which are no need to be observables
+      this.disintegrating = false;
+      this.lastProgress = 0;
+      this.rect = {
+        width: 0,
+        height: 0
+      };
+      this.height = 0;
+      this.width = 0;
+      this.ctx = {};
     },
     disintegrate(options) {
       if (!this.isAnimating && this.buttonVisible) {
-        // console.log(`${this.config.label}: disintegrate`, this.buttonVisible);
+        // sync animating
+        this.$emit("update:animating", true);
+        // trigger onBegin
+        if (is.fnc(this.mergedOps.onBegin)) {
+          this.mergedOps.onBegin();
+        }
         this.disintegrating = true;
         this.lastProgress = 0;
 
@@ -121,13 +136,16 @@ export default {
             this.addParticles(this.rect, value / 100, true);
           }
         });
-        this.buttonVisible = !this.buttonVisible;
+        this.buttonVisible = false;
+
+        if (this.visible) {
+          this.$emit("update:visible", false);
+        }
       }
     },
     setup(options) {
-      // console.log(`${this.config.label}: setup`, this.buttonVisible);
       this.mergedOps = { ...this.mergedOps, ...options };
-      this.wrapperVisible = "visible";
+      this.wrapperVisible = this.visible ? "visible" : "hidden";
       if (this.mergedOps.duration) {
         this.rect = this.$refs["btn"].getBoundingClientRect();
 
@@ -189,7 +207,7 @@ export default {
       let i = Math.floor(
         this.mergedOps.particlesAmountCoefficient * (progressDiff * 100 + 1)
       );
-      // fix redundant complete event
+      // fix redundant onComplete event
       i = Math.max(1, i);
       if (i > 0) {
         while (i--) {
@@ -230,18 +248,29 @@ export default {
       });
     },
     play() {
+      if (!this.animating) {
+        this.$emit("update:animating", true);
+      }
       this.frame = requestAnimationFrame(this.loop);
     },
     loop() {
       this.updateParticles();
       this.renderParticles();
       if (this.isAnimating) {
+        if (!this.animating) {
+          this.$emit("update:animating", true);
+        }
         this.frame = requestAnimationFrame(this.loop);
       }
     },
     integrate(options) {
       if (!this.isAnimating) {
-        // console.log(`${this.config.label}: integrate`, this.buttonVisible);
+        if (!this.animating) {
+          this.$emit("update:animating", true);
+        }
+        if (is.fnc(this.mergedOps.onBegin)) {
+          this.mergedOps.onBegin();
+        }
         this.disintegrating = false;
         this.lastProgress = 1;
         this.setup(options);
@@ -249,19 +278,14 @@ export default {
           const value = anim.animatables[0].target.value;
           setTimeout(() => {
             this.addTransforms(value);
-            // console.log(`${this.config.label}: inTimeout`, this.buttonVisible);
-
-            // this.wrapperTransform = "";
-            // this.btnTransform = "";
-            // this.canvasStyl.display = "none"
           }, this.mergedOps.duration);
 
           if (this.mergedOps.duration) {
-            // console.log("before addParticles", value);
             this.addParticles(this.rect, value / 100, true);
           }
         });
-        this.buttonVisible = !this.buttonVisible;
+        this.buttonVisible = true;
+        this.$emit("update:visible", true);
       }
     },
 
@@ -283,15 +307,14 @@ export default {
         this.pause();
 
         this.canvasStyl.display = "none";
-        if (is.fnc(this.mergedOps.complete)) {
-          // console.log(`${this.config.label}: visible`, this.buttonVisible);
-          this.mergedOps.complete();
-          // console.log("complete");
+        if (is.fnc(this.mergedOps.onComplete)) {
+          this.mergedOps.onComplete();
         }
       }
     },
     pause() {
       cancelAnimationFrame(this.frame);
+      this.$emit("update:animating", false);
       this.frame = null;
     },
     renderParticles() {
@@ -330,6 +353,16 @@ export default {
           this.ctx.translate(-p.startX, -p.startY);
         }
       }
+    },
+
+    visibleChange(n, o) {
+      if (!!n != !!o) {
+        if (n) {
+          this.integrate();
+        } else {
+          this.disintegrate();
+        }
+      }
     }
   },
   computed: {
@@ -355,79 +388,27 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$attrs);
     if (this.$slots.default) {
+      this.init();
       this.$set(
         this.mergedOps,
         "color",
         getCSSValue(this.$refs["btn"], "background-color")
       );
       this.ctx = this.$refs["canvas"].getContext("2d");
-      // this.$watch('visible', function (n, o) {
-      //   if (!!n != !!o) {
-      //     console.log(n, o);
-      //     this.buttonVisible = n
-      //     if (n) {
-      //       this.integrate()
-      //     } else {
-      //       this.btnClick()
-      //     }
-      //   }
-      // },
-      //   {
-      //     immediate: true
-      //   }
-      // )
+      // register watcher
+      this.$watch("visible", this.visibleChange);
+      // change init visible style
+      if (!this.visible) {
+        this.addTransforms(101);
+      }
+      this.$emit("update:animating", false);
+      this.buttonVisible = this.visible;
     }
   }
-  // watch: {
-  //   visible: {
-  //     handler:
-  //   }
-  // }
 };
 </script>
 <style lang="scss">
-.particles {
-  position: relative;
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.particles-canvas {
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.particles-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  will-change: transform;
-}
-
-.particles-button {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  border-radius: 5px;
-  border-radius: var(--radius-button);
-  background: var(--color-button-bg);
-  color: var(--color-button-text);
-  border: 0;
-  border: var(--border-button);
-  margin: 0;
-  padding: 1.5rem 3rem;
-  padding: var(--button-padding);
-  will-change: transform;
-}
-
-.particles-button:focus {
-  outline: none;
-}
+@import "index";
 </style>
