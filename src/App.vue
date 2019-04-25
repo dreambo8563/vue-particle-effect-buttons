@@ -6,11 +6,8 @@
           v-if="!v.visible && !v.animating"
           @click="toggle(i)"
           style="position: absolute; top: 1em; right: 1em; background: rgb(50, 186, 250); color: rgb(255, 255, 255); border: 0px; border-radius: 4px; font-size: 1em; padding: 0.7em 1.2em; cursor: pointer; outline: none;"
-        >
-          Reset
-        </button>
+        >Reset</button>
         <Test
-          cls="abc"
           :animating.sync="config[i].animating"
           :visible.sync="config[i].visible"
           :ref="getRef(i)"
@@ -35,7 +32,7 @@ const demoArr = [
     size: 6,
     particlesAmountCoefficient: 4,
     oscillationCoefficient: 2,
-    color: function() {
+    color: function () {
       return Math.random() < 0.5 ? "#000000" : "#ffffff";
     },
     label: "Upload"
