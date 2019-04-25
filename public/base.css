@@ -356,117 +356,129 @@ main {
 }
 
 .theme-1 {
-  --color-item-bg: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+  background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
   --color-action: #121019;
-  --color-button-bg: #121019;
-  --color-button-text: #fff;
-  --button-padding: 1.5rem 3rem;
-  --radius-button: 5px;
-  --border-button: 0;
 }
-
+.theme-1 .vue-particle-effect-button .particles-button {
+  background: #121019;
+  color: #fff;
+  padding: 1.5rem 3rem;
+  border-radius: 5px;
+  border: 0;
+}
 .theme-2 {
-  --color-item-bg: linear-gradient(120deg, #7f54e6, #3f51b5);
+  background: linear-gradient(120deg, #7f54e6, #3f51b5);
   --color-action: #f3f3f3;
-  --color-button-bg: #f3f3f3;
-  --color-button-text: #3c2e9e;
-  --button-padding: 1.8rem 4rem;
-  --radius-button: 5px;
-  --border-button: 0;
 }
-
+.theme-2 .vue-particle-effect-button .particles-button {
+  background: #f3f3f3;
+  color: #3c2e9e;
+  padding: 1.8rem 4rem;
+  border-radius: 5px;
+  border: 0;
+}
 .theme-3 {
-  --color-item-bg: linear-gradient(120deg, #152bc3, #5366d8);
+  background: linear-gradient(120deg, #152bc3, #5366d8);
   --color-action: #0e19a2;
-  --color-button-bg: #0e19a2;
-  --color-button-text: #fff;
-  --button-padding: 2rem 4rem;
-  --radius-button: 0;
-  --border-button: 0;
 }
-
+.theme-3 .vue-particle-effect-button .particles-button {
+  background: #0e19a2;
+  color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 0;
+  border: 0;
+}
 .theme-4 {
-  --color-item-bg: linear-gradient(120deg, #ecef3a, #ec6b9b);
+  background: linear-gradient(120deg, #ecef3a, #ec6b9b);
   --color-action: #e85577;
-  --color-button-bg: #transparent;
-  --color-button-text: #e85577;
-  --button-padding: 1.5rem 3rem;
-  --radius-button: 15px;
-  --border-button: 4px solid #e85577;
 }
-
+.theme-4 .vue-particle-effect-button .particles-button {
+  background: #transparent;
+  color: #e85577;
+  padding: 1.5rem 3rem;
+  border-radius: 15px;
+  border: 4px solid #e85577;
+}
 .theme-5 {
-  --color-item-bg: linear-gradient(120deg, #baedff, #07a2da);
+  background: linear-gradient(120deg, #baedff, #07a2da);
   --color-action: #003ff1;
-  --color-button-bg: #003ff1;
-  --color-button-text: #fff;
-  --button-padding: 1rem 2rem;
-  --radius-button: 5px;
-  --border-button: 0;
 }
-
+.theme-5 .vue-particle-effect-button .particles-button {
+  background: #003ff1;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 0;
+}
 .theme-6 {
-  --color-item-bg: linear-gradient(120deg, #9c27b0, #090772);
+  background: linear-gradient(120deg, #9c27b0, #090772);
   --color-action: #f7d337;
-  --color-button-bg: #f7d337;
-  --color-button-text: #000000;
-  --button-padding: 1.5rem 3rem;
-  --radius-button: 40px;
-  --border-button: 0;
 }
-
+.theme-6 .vue-particle-effect-button .particles-button {
+  background: #f7d337;
+  color: #000000;
+  padding: 1.5rem 3rem;
+  border-radius: 40px;
+  border: 0;
+}
 .theme-7 {
-  --color-item-bg: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+  background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
   --color-action: #e2405b;
-  --color-button-bg: #e2405b;
-  --color-button-text: #e9e9e9;
-  --button-padding: 1.8rem 4.5rem;
-  --radius-button: 0;
-  --border-button: 0;
 }
 
+.theme-7 .vue-particle-effect-button .particles-button {
+  background: #e2405b;
+  color: #e9e9e9;
+  padding: 1.8rem 4.5rem;
+  border-radius: 0;
+  border: 0;
+}
 .theme-8 {
-  --color-item-bg: linear-gradient(120deg, #84fab0, #8fd3f4);
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
   --color-action: blue;
-  --color-button-bg: linear-gradient(to top, #22b9d2 0%, #5389ec 100%);
-  --color-button-text: #fff;
-  --button-padding: 2rem 4rem;
-  --radius-button: 10px;
-  --border-button: 0;
 }
-
+.theme-8 .vue-particle-effect-button .particles-button {
+  background: linear-gradient(to top, #22b9d2 0%, #5389ec 100%);
+  color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  border: 0;
+}
 .theme-9 {
-  --color-item-bg: linear-gradient(120deg, #d299c2 0%, #fef9d7 100%);
+  background: linear-gradient(120deg, #d299c2 0%, #fef9d7 100%);
   --color-action: #c13a3a;
-  --color-button-bg: #c13a3a;
-  --color-button-text: #ffffff;
-  --button-padding: 1.5rem 3rem;
-  --radius-button: 10px;
-  --border-button: 0;
 }
-
+.theme-9 .vue-particle-effect-button .particles-button {
+  background: #c13a3a;
+  color: #ffffff;
+  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  border: 0;
+}
 .theme-10 {
-  --color-item-bg: linear-gradient(120deg, #fddb92 0%, #d1fdff 100%);
+  background: linear-gradient(120deg, #fddb92 0%, #d1fdff 100%);
   --color-action: #b1b1b1;
-  --color-button-bg: #b1b1b1;
-  --color-button-text: #fff;
-  --button-padding: 1.5rem 3rem;
-  --radius-button: 0;
-  --border-button: 0;
 }
-
+.theme-10 .vue-particle-effect-button .particles-button {
+  background: #b1b1b1;
+  color: #fff;
+  padding: 1.5rem 3rem;
+  border-radius: 0;
+  border: 0;
+}
 .theme-11 {
-  --color-item-bg: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%);
   --color-action: #1b81ea;
-  --color-button-bg: #fff;
-  --color-button-text: #1b81ea;
-  --button-padding: 2rem 4.5rem;
-  --radius-button: 7px;
-  --border-button: 0;
 }
-
+.theme-11 .vue-particle-effect-button .particles-button {
+  background: #fff;
+  color: #1b81ea;
+  padding: 2rem 4.5rem;
+  border-radius: 7px;
+  border: 0;
+}
 .theme-12 {
-  --color-item-bg: linear-gradient(
+  background: linear-gradient(
     to right,
     #f78ca0 0%,
     #f9748f 19%,
@@ -474,11 +486,13 @@ main {
     #fe9a8b 100%
   );
   --color-action: #ff4d73;
-  --color-button-bg: #ff4d73;
-  --color-button-text: #fff;
-  --button-padding: 1.5rem 7rem;
-  --radius-button: 40px;
-  --border-button: 0;
+}
+.theme-12 .vue-particle-effect-button .particles-button {
+  background: #ff4d73;
+  color: #fff;
+  padding: 1.5rem 7rem;
+  border-radius: 40px;
+  border: 0;
 }
 
 @media screen and (min-width: 50em) {
