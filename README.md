@@ -1,14 +1,14 @@
 # vue-particle-effect-button ([demo](https://dreambo8563.github.io/vue-particle-effect-buttons/))
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-
-> Bursting particle effect buttons for Vue.
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b0f0d5882e1417e8cb42b7e507bff05)](https://app.codacy.com/app/dreambo8563/vue-particle-effect-buttons?utm_source=github.com&utm_medium=referral&utm_content=dreambo8563/vue-particle-effect-buttons&utm_campaign=Badge_Grade_Dashboard)
 [![Greenkeeper badge](https://badges.greenkeeper.io/dreambo8563/vue-particle-effect-buttons.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/dreambo8563/vue-particle-effect-buttons.svg?branch=master)](https://travis-ci.org/dreambo8563/vue-particle-effect-buttons)
 [![Known Vulnerabilities](https://snyk.io/test/github/dreambo8563/vue-particle-effect-buttons/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dreambo8563/vue-particle-effect-buttons?targetFile=package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![npm](https://img.shields.io/npm/dt/vue-particle-effect-buttons.svg?style=flat)
+
+> Bursting particle effect buttons for Vue.
 
 This library is a Vue portal of an awesome [Codrops Article](https://tympanus.net/codrops/2018/04/25/particle-effects-for-buttons/) by [Luis Manuel](https://tympanus.net/codrops/author/luis/) (original [source](https://github.com/codrops/ParticleEffectsButtons/)).
 
