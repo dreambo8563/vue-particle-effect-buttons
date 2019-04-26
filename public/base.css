@@ -357,7 +357,7 @@ main {
 
 .theme-1 {
   background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
-  --color-action: #121019;
+  /* --color-action: #121019; */
 }
 .theme-1 .vue-particle-effect-button .particles-button {
   background: #121019;
@@ -368,7 +368,7 @@ main {
 }
 .theme-2 {
   background: linear-gradient(120deg, #7f54e6, #3f51b5);
-  --color-action: #f3f3f3;
+  /* --color-action: #f3f3f3; */
 }
 .theme-2 .vue-particle-effect-button .particles-button {
   background: #f3f3f3;
@@ -379,7 +379,7 @@ main {
 }
 .theme-3 {
   background: linear-gradient(120deg, #152bc3, #5366d8);
-  --color-action: #0e19a2;
+  /* --color-action: #0e19a2; */
 }
 .theme-3 .vue-particle-effect-button .particles-button {
   background: #0e19a2;
@@ -390,10 +390,10 @@ main {
 }
 .theme-4 {
   background: linear-gradient(120deg, #ecef3a, #ec6b9b);
-  --color-action: #e85577;
+  /* --color-action: #e85577; */
 }
 .theme-4 .vue-particle-effect-button .particles-button {
-  background: #transparent;
+  background: transparent;
   color: #e85577;
   padding: 1.5rem 3rem;
   border-radius: 15px;
@@ -401,7 +401,7 @@ main {
 }
 .theme-5 {
   background: linear-gradient(120deg, #baedff, #07a2da);
-  --color-action: #003ff1;
+  /* --color-action: #003ff1; */
 }
 .theme-5 .vue-particle-effect-button .particles-button {
   background: #003ff1;
@@ -412,7 +412,7 @@ main {
 }
 .theme-6 {
   background: linear-gradient(120deg, #9c27b0, #090772);
-  --color-action: #f7d337;
+  /* --color-action: #f7d337; */
 }
 .theme-6 .vue-particle-effect-button .particles-button {
   background: #f7d337;
@@ -423,7 +423,7 @@ main {
 }
 .theme-7 {
   background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
-  --color-action: #e2405b;
+  /* --color-action: #e2405b; */
 }
 
 .theme-7 .vue-particle-effect-button .particles-button {
@@ -435,7 +435,7 @@ main {
 }
 .theme-8 {
   background: linear-gradient(120deg, #84fab0, #8fd3f4);
-  --color-action: blue;
+  /* --color-action: blue; */
 }
 .theme-8 .vue-particle-effect-button .particles-button {
   background: linear-gradient(to top, #22b9d2 0%, #5389ec 100%);
@@ -446,7 +446,7 @@ main {
 }
 .theme-9 {
   background: linear-gradient(120deg, #d299c2 0%, #fef9d7 100%);
-  --color-action: #c13a3a;
+  /* --color-action: #c13a3a; */
 }
 .theme-9 .vue-particle-effect-button .particles-button {
   background: #c13a3a;
@@ -457,7 +457,7 @@ main {
 }
 .theme-10 {
   background: linear-gradient(120deg, #fddb92 0%, #d1fdff 100%);
-  --color-action: #b1b1b1;
+  /* --color-action: #b1b1b1; */
 }
 .theme-10 .vue-particle-effect-button .particles-button {
   background: #b1b1b1;
@@ -468,7 +468,7 @@ main {
 }
 .theme-11 {
   background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%);
-  --color-action: #1b81ea;
+  /* --color-action: #1b81ea; */
 }
 .theme-11 .vue-particle-effect-button .particles-button {
   background: #fff;
@@ -485,7 +485,7 @@ main {
     #fd868c 60%,
     #fe9a8b 100%
   );
-  --color-action: #ff4d73;
+  /* --color-action: #ff4d73; */
 }
 .theme-12 .vue-particle-effect-button .particles-button {
   background: #ff4d73;
