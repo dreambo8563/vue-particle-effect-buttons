@@ -2,6 +2,7 @@
 
 > Bursting particle effect buttons for Vue.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b0f0d5882e1417e8cb42b7e507bff05)](https://app.codacy.com/app/dreambo8563/vue-particle-effect-buttons?utm_source=github.com&utm_medium=referral&utm_content=dreambo8563/vue-particle-effect-buttons&utm_campaign=Badge_Grade_Dashboard)
 [![Greenkeeper badge](https://badges.greenkeeper.io/dreambo8563/vue-particle-effect-buttons.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/dreambo8563/vue-particle-effect-buttons.svg?branch=master)](https://travis-ci.org/dreambo8563/vue-particle-effect-buttons)
 [![Known Vulnerabilities](https://snyk.io/test/github/dreambo8563/vue-particle-effect-buttons/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dreambo8563/vue-particle-effect-buttons?targetFile=package.json)
