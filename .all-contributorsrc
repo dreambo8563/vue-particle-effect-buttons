@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dreambo8563",
+      "name": "Vincent Guo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6948318?v=4",
+      "profile": "https://dreambo8563.github.io/",
+      "contributions": [
+        "code",
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vue-particle-effect-buttons",
+  "projectOwner": "dreambo8563",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
