@@ -91,7 +91,7 @@ You change the `visible` boolean prop to kick-off an animation, typically as a r
 
 I tried to keep the properties exactly the same as in the original codrops version.
 
-## Solts
+## Slots
 
 | Property  | Type | Default                 | Description               |
 | :-------- | :--- | :---------------------- | :------------------------ |
