@@ -15,7 +15,7 @@ This library is a Vue portal of an awesome [Codrops Article](https://tympanus.ne
 ## Install
 
 ```bash
-npm install --save vue-particle-effect-buttons
+npm install --save animejs vue-particle-effect-buttons
 ```
 
 ## Usage
