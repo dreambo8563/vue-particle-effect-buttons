@@ -1,4 +1,3 @@
-console.log(process.env.DOC_ENV);
 const externals =
   process.env.NODE_ENV == "production" && !process.env.DOC_ENV
     ? {
