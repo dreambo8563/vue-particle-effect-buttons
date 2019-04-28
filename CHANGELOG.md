@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v1.0.2-beta.0...v1.0.3) (2019-04-28)
+
+
+### Bug Fixes
+
+* **log:** rm log ([f93f050](https://github.com/dreambo8563/vue-particle-effect-buttons/commit/f93f050))
+
+
+
 <a name="1.0.2-beta.0"></a>
 ## [1.0.2-beta.0](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v1.0.1...v1.0.2-beta.0) (2019-04-28)
 
