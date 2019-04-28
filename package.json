@@ -9,7 +9,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-particle-effect-buttons src/index.js",
     "test": "npm run build",
-    "pages": "vue-cli-service build --dest docs",
+    "pages": "DOC_ENV=true vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "report": "vue-cli-service build --report",
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "core-js": "^3.0.1",
-    "animejs": "^3.0.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -27,6 +26,7 @@
     "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
+    "animejs": "^3.0.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
