@@ -327,7 +327,7 @@ main {
   overflow: hidden;
   padding: 4rem 1.5rem;
   height: 100vw;
-  width: 100vw;
+  width: 100%;
   background: var(--color-item-bg);
 }
 
@@ -527,7 +527,7 @@ main {
   .grid {
     display: grid;
     grid-gap: 22px;
-    grid-template-columns: repeat(2, calc(50vmax - 11px));
+    grid-template-columns: repeat(2, auto);
   }
   .grid__item {
     height: 50vmax;
