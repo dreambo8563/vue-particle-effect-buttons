@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v1.0.3...v1.0.4) (2019-08-22)
+
+
+### Bug Fixes
+
+* **base.css:** fixd page too wide on windows ([b37bee5](https://github.com/dreambo8563/vue-particle-effect-buttons/commit/b37bee5))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/dreambo8563/vue-particle-effect-buttons/compare/v1.0.2-beta.0...v1.0.3) (2019-04-28)
 
