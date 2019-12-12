@@ -17,7 +17,7 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
+    "core-js": "^3.5.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
